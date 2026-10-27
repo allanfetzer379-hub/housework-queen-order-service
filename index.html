@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#F8F9FA">
+  <title>訂單確認與客服服務｜Housework Queen 家事女王</title>
+  <style>
+    :root{color-scheme:light;--bg:#f8f9fa;--ink:#1f2937;--muted:#626b76;--line:#06c755;--border:#e6e9e7;--radius:20px}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    a:focus-visible{outline:3px solid #17793e;outline-offset:5px}
+    .skip{position:fixed;top:12px;left:12px;padding:10px 16px;background:white;z-index:5;transform:translateY(-160%)}
+    .skip:focus{transform:none}
+    .wrap{width:min(100% - 40px,1000px);margin-inline:auto}
+    header{border-bottom:1px solid var(--border);background:#ffffffb8}
+    .brandbar{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .wordmark{font-size:17px;font-weight:650;letter-spacing:-.5px;line-height:1.3}
+    .wordmark small{display:block;margin-top:5px;font-size:12px;letter-spacing:3px;font-weight:500;color:var(--muted)}
+    .anniversary{font-size:12px;color:#58635d;white-space:nowrap;border-left:1px solid #cdd5cf;padding-left:18px}
+    .anniversary strong{font-size:25px;font-weight:500;margin-right:3px}
+    main{padding:46px 0 30px}
+    .welcome{max-width:670px;margin-bottom:32px}
+    .eyebrow{margin:0 0 12px;font-size:12px;letter-spacing:2px;color:var(--muted)}
+    h1{font-size:clamp(27px,4.5vw,38px);letter-spacing:-1px;line-height:1.4;margin:0 0 16px;font-weight:600}
+    h1 span{font-weight:400}
+    .intro{font-size:15px;color:var(--muted);margin:0;max-width:61ch}
+    .layout{display:grid;gap:24px;align-items:start}
+    .card{border:1px solid #fff;border-radius:var(--radius);background:#ffffffde;box-shadow:0 10px 25px rgba(0,0,0,.05);overflow:hidden}
+    .card-head{padding:24px 24px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--border)}
+    h2{font-size:18px;font-weight:600;margin:0;letter-spacing:.2px}
+    .status{font-size:12px;color:#3e5d48;background:#edf4ee;padding:4px 10px;border-radius:16px;white-space:nowrap}
+    .details{padding:24px}
+    dl{margin:0}
+    .dates{display:grid;gap:12px;margin-bottom:26px}
+    .row{display:flex;justify-content:space-between;gap:16px;font-size:13px}
+    dt{color:var(--muted)}
+    dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+    .section-label{font-size:12px;color:var(--muted);margin:0 0 16px;font-weight:500}
+    .products{list-style:none;margin:0;padding:0;display:grid;gap:20px}
+    .product{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}
+    .product-name{font-size:14px;font-weight:600;margin:0 0 5px}
+    .product-description{font-size:12px;color:var(--muted);margin:0 0 9px}
+    .tag{display:inline-block;font-size:11px;padding:2px 8px;border:1px solid var(--border);border-radius:16px;color:#5a645e;background:#fafcfb}
+    .quantity{font-size:12px;color:var(--muted);padding-top:3px}
+    .payment{margin-top:26px;padding:22px;background:#f2f6f3;border-radius:16px}
+    .payment-top{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13px;color:#536158}
+    .amount{font-size:42px;line-height:1.3;letter-spacing:-1.8px;font-weight:600;margin:9px 0 15px;font-variant-numeric:tabular-nums}
+    .amount small{font-size:14px;letter-spacing:0;font-weight:500;margin-right:7px}
+    .total{display:flex;justify-content:space-between;gap:12px;font-size:13px;border-top:1px solid #dce5de;padding-top:14px}
+    .total strong{font-weight:600}
+    .delivery{margin-top:26px;display:grid;gap:18px}
+    .delivery dt{font-size:12px;margin-bottom:4px}
+    .delivery dd{text-align:left;font-size:14px}
+    .address{display:block;font-size:12px;color:var(--muted);margin-top:3px}
+    .support{padding:28px 24px}
+    .support-mark{display:inline-grid;place-items:center;width:48px;height:48px;border-radius:16px;background:#eaf8ee;color:#16783d;font-size:12px;font-weight:750;margin-bottom:22px;letter-spacing:-.4px}
+    .support h2{font-size:23px;line-height:1.5;margin-bottom:14px}
+    .support p{font-size:14px;color:var(--muted);margin:0 0 22px}
+    .cta{display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:14px 16px;border-radius:16px;background:linear-gradient(135deg,#0bd05c,#06c755);color:#073919;font-size:14px;font-weight:700;box-shadow:0 6px 16px #06c75520;transition:transform .2s ease,box-shadow .2s ease;touch-action:manipulation}
+    @media(hover:hover){.cta:hover{transform:translateY(-2px);box-shadow:0 10px 22px #06c75535}.search:hover{background:#f3f7f4}}
+    .cta:active{transform:scale(.98)}
+    .arrow{margin-left:auto;font-size:20px;line-height:1}
+    .search{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;padding:15px 0;border-bottom:1px solid var(--border);font-size:13px;transition:background .2s}
+    .search small{display:block;color:var(--muted);font-size:11px}
+    .search strong{font-size:17px;font-weight:600}
+    .search-label{color:#3b5845;font-size:12px}
+    .support .hint{font-size:12px;line-height:1.7;margin:16px 0 0}
+    footer{padding:26px 0 150px;color:var(--muted);text-align:center;font-size:11px;line-height:2}
+    footer p{margin:0}
+    /* Web frosted-glass approximation, with an opaque fallback. */
+    .bottom-bar{position:fixed;bottom:0;left:0;right:0;z-index:3;background:#fffffff0;border-top:1px solid #e4e9e5;padding:14px 0 calc(14px + env(safe-area-inset-bottom,0px));box-shadow:0 -8px 30px #1f293705}
+    @supports(backdrop-filter:blur(20px)){.bottom-bar{background:#ffffffcf;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}}
+    .bottom-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .bottom-copy{display:none;font-size:13px;font-weight:600}
+    .bottom-copy small{display:block;font-weight:400;font-size:12px;color:var(--muted)}
+    .bottom-bar .cta{width:100%}
+    .dot{width:7px;height:7px;border-radius:50%;background:#12572a;box-shadow:0 0 0 4px #ffffff50;flex-shrink:0;animation:breathe 2.8s ease-in-out infinite}
+    @keyframes breathe{50%{box-shadow:0 0 0 7px #ffffff15}}
+    @media(min-width:768px){main{padding-top:58px}.layout{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}.support{position:sticky;top:24px}.card-head,.details{padding:28px 32px}.support{padding:32px}.bottom-copy{display:block}.bottom-bar .cta{width:390px}footer{padding-bottom:130px}}
+    @media(max-width:359px){.wrap{width:calc(100% - 28px)}.details,.card-head,.support{padding:20px}.row{font-size:12px;gap:8px}.bottom-bar .cta{font-size:12px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+    @media(prefers-reduced-transparency:reduce){.bottom-bar,.card,header{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none}}
+    @media print{.bottom-bar,.skip{display:none}.support{position:static}.card{box-shadow:none;border:1px solid #ddd}footer{padding-bottom:0}body{background:#fff}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">跳至訂單內容</a>
+  <header>
+    <div class="wrap brandbar">
+      <div class="wordmark">Housework Queen<small>家事女王</small></div>
+      <div class="anniversary"><strong>8</strong>週年慶</div>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+    <section class="welcome" aria-labelledby="greeting">
+      <p class="eyebrow">訂單確認與會員服務</p>
+      <h1 id="greeting">謝明城 <span>會員您好</span></h1>
+      <p class="intro">感謝您對【Housework Queen 家事女王】的支持，正在進行出貨前準備。商品取件後會開立電子發票，屆時寄送到您填寫的電子信箱哦❤️</p>
+    </section>
+    <div class="layout">
+      <section class="card" aria-labelledby="order-title">
+        <div class="card-head"><h2 id="order-title">訂單明細</h2><span class="status">出貨前準備中</span></div>
+        <div class="details">
+          <dl class="dates">
+            <div class="row"><dt>訂單下單日期</dt><dd><time datetime="2026-03-14">2026/3/14</time></dd></div>
+            <div class="row"><dt>重複購買日期</dt><dd><time datetime="2026-10-20T15:58:11">2026/10/20 15:58:11</time></dd></div>
+          </dl>
+          <h3 class="section-label">訂購產品</h3>
+          <ul class="products">
+            <li class="product"><div><p class="product-name">✦1+1 完美神搭配✦</p><p class="product-description">高效除霉凝膠 ＋ 精油多效地板清潔劑</p><span class="tag">清潔組合</span></div><span class="quantity" aria-label="數量 1">× 1</span></li>
+            <li class="product"><div><p class="product-name">超吸水珊瑚絨功能布-5入</p><p class="product-description">5 條裝</p><span class="tag">居家清潔</span></div><span class="quantity" aria-label="數量 1">× 1</span></li>
+          </ul>
+          <div class="payment" aria-label="分期付款資訊">
+            <div class="payment-top"><span>每月分期金額</span><span>共 12 期</span></div>
+            <div class="amount"><small>NT$</small>769</div>
+            <div class="total"><span>訂單總金額</span><strong>NT$ 9,228</strong></div>
+          </div>
+          <dl class="delivery">
+            <div><dt>聯絡電話</dt><dd>929373133</dd></div>
+            <div><dt>配送資訊</dt><dd>7-ELEVEN 薇豐門市<span class="address">屏東縣屏東市大連里豐年街1號</span></dd></div>
+          </dl>
+        </div>
+      </section>
+      <aside class="card support" aria-labelledby="support-title">
+        <span class="support-mark" aria-hidden="true">LINE</span>
+        <h2 id="support-title">關於訂單，<br>讓我們為您協助。</h2>
+        <p>若您是不小心重複購買（欲取消）或需要官方客服協助，請點擊下方按鈕聯繫我們，我們將立刻為您辦理訂閱取消與刷退手續。</p>
+        <a class="cta" data-line href="https://line.me/ti/p/@0">聯繫官方 LINE 取消訂單<span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="search" data-line href="https://line.me/ti/p/@0" aria-label="官方 LINE 帳號 @0，點擊諮詢或手動搜尋">
+          <span><small>官方 LINE 帳號</small><strong>@0</strong></span><span class="search-label">點擊諮詢／搜尋這裡 ↗</span>
+        </a>
+        <p class="hint">也可以開啟 LINE，手動搜尋上方帳號。取消與刷退進度，請以客服確認為準。</p>
+      </aside>
+    </div>
+  </main>
+  <footer class="wrap"><p>Housework Queen 家事女王</p><p>註冊品牌：幼琪實業有限公司 <span aria-hidden="true">|</span> 統一編號：85010752</p></footer>
+  <nav class="bottom-bar" aria-label="訂單客服快捷聯繫">
+    <div class="wrap bottom-inner">
+      <div class="bottom-copy">需要協助處理訂單？<small>透過 LINE 聯繫客服，諮詢或申請取消</small></div>
+      <a class="cta" data-line href="https://line.me/ti/p/@0"><span class="dot" aria-hidden="true"></span>聯繫官方 LINE 客服／取消訂單<span aria-hidden="true">↗</span></a>
+    </div>
+  </nav>
+  <script>
+    // 修改此變數，即可統一更新所有客服按鈕。
+    const LINE_URL = 'https://line.me/ti/p/@0';
+    document.querySelectorAll('[data-line]').forEach(link => {
+      link.href = LINE_URL;
+    });
+  </script>
+</body>
+</html>
